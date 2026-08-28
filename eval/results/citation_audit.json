@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "bibliography_entries": 7,
+  "papers": {
+    "paper.md": [
+      "cao2026defiscreener",
+      "chen2024flashsyn",
+      "liao2024smartaxe",
+      "moore2026statetwins",
+      "wen2024foray",
+      "wu2022timetravel",
+      "zhong2025defiscope"
+    ]
+  },
+  "errors": []
+}

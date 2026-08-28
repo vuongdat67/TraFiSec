@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "label_contract": "schema-v2 reviewer-verified benign only",
+  "denominators": {
+    "paper_eligible_annotations": 0,
+    "cache_available": 0,
+    "scored": 0,
+    "missing_cache": 0
+  },
+  "operating_points": {
+    "0.001": {
+      "frozen_threshold": 0.513565813,
+      "alerts": 0,
+      "verified_benign_scored": 0,
+      "matched_negative_fpr": null,
+      "wilson_95": {
+        "successes": 0,
+        "total": 0,
+        "confidence": 0.95,
+        "low": 0.0,
+        "high": 1.0
+      }
+    },
+    "0.01": {
+      "frozen_threshold": 0.089817915,
+      "alerts": 0,
+      "verified_benign_scored": 0,
+      "matched_negative_fpr": null,
+      "wilson_95": {
+        "successes": 0,
+        "total": 0,
+        "confidence": 0.95,
+        "low": 0.0,
+        "high": 1.0
+      }
+    }
+  },
+  "scores": [],
+  "claim_eligible": false
+}

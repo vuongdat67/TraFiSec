@@ -1,0 +1,3 @@
+case,mutation,outcome,loss_S,loss_Sm,Δloss,note
+Honest arbitrage (Jun 2023) — hard-negative/fidelity,fidelity,EXECUTED,,,,mid-block reconstruction (replay idx0-9 block 17447511 rồi target idx10) — gas 1031334 vs mainnet 1013534 (lệch 1.8%); tx index 10/132
+Honest arbitrage (Jun 2023) — hard-negative/f_fl,f_fl,REVERTED,,,,disable DssFlash 0x60744434 (code→0x+bal→0) — REVERTED gas 71069 (tx chết thiếu flash-mint); baseline viol=0 → CAUSE KHÔNG suy được (guard chống FP arbitrage đúng)

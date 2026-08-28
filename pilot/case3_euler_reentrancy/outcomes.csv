@@ -1,0 +1,3 @@
+case,mutation,outcome,loss_S,loss_Sm,Δloss,note
+Euler Finance (Mar 2023)/fidelity,fidelity,EXECUTED,,,,"fidelity PASS — fork 16817994, replay EXECUTED gas~1.95M khớp mainnet; tx index 0 block 16817996"
+Euler Finance (Mar 2023)/f_fl,f_fl,REVERTED,,,,disable Aave V2 LendingPool 0x7d2768de (code→0x+bal→0) — REVERTED status 0x0 gas 43145 (~2% mainnet): tx chết ngay thiếu loan → loan là điều kiện cần (REVERTED = precondition evidence theo §3b); CAUSE(f_fl) tính được qua NO_HARM path chưa kiểm

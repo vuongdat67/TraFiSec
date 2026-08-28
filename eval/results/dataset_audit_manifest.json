@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "run_id": "dataset-audit-20260819T130751Z",
+  "experiment": "dataset-audit",
+  "created_at_utc": "2026-08-19T13:07:51.778283+00:00",
+  "git": {
+    "commit": "b4fdf0f77ecbc2da4dc251a6d85d0b0211ff223e",
+    "dirty": true
+  },
+  "runtime": {
+    "python": "3.12.12 (main, Aug 19 2026, 19:56:28) [Clang 17.0.0 (clang-1700.0.13.5)]",
+    "platform": "macOS-15.7.3-x86_64-i386-64bit",
+    "tools": {
+      "anvil": "anvil Version: 1.7.1",
+      "cast": "cast Version: 1.7.1",
+      "forge": "forge Version: 1.7.1"
+    },
+    "packages": {
+      "numpy": "2.5.0",
+      "scipy": "1.18.0",
+      "matplotlib": "3.11.0",
+      "pycryptodome": "3.17",
+      "pytest": "9.1.1",
+      "ruff": "0.15.20"
+    }
+  },
+  "command": [],
+  "parameters": {},
+  "inputs": {
+    "trace_cache": {
+      "path": "eval/results/e1_trace_cache.jsonl",
+      "sha256": "70843d604454a1c65f8f921889070b537654aa634bfd96a074660fa7e94e4789"
+    }
+  },
+  "extra": {
+    "outputs": [
+      "eval/results/dataset_audit.json",
+      "eval/results/DATASET_AUDIT.md"
+    ]
+  }
+}

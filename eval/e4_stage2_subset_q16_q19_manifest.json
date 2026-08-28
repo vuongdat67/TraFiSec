@@ -1,0 +1,19 @@
+{
+  "schema_version": 2,
+  "experiment": "E4-stage2-delegate-extension",
+  "status": "protocol-frozen-before-execution",
+  "source_queue": "eval/e4_fixed_set_v2.json",
+  "source_queue_sha256": "54adbd4f2348384cc858124882f148948c3ad704daf368a70ea63912cab0781c",
+  "selection_rule": "queue indices 16-19, previously excluded only because cached mutation support was empty; planner vNext discovery is used",
+  "subset_size": 4,
+  "technical_selectability": ["valid transaction hash", "positive historical block", "delegatecall trace evidence", "planner vNext validates mutation"],
+  "replacement_policy": "No replacement after runtime starts; provider, transport, or EVM failure is recorded as INCONCLUSIVE.",
+  "outcome_taxonomy": ["CAUSE", "NO_EFFECT", "REVERT", "INCONCLUSIVE"],
+  "stop_conditions": ["missing prepared context or proof input", "baseline fidelity/proof gate failure", "mutation applicability or validity cannot be established", "harm oracle unavailable or valuation evidence missing", "provider/process timeout; record UNOBSERVED/INCONCLUSIVE, never causal"],
+  "selected_cases": [
+    {"subset_index": 0, "queue_index": 16, "case_id": "defihacklabs-erc20transfer-2024-10-22", "tx_hash": "0x7f2540af4a1f7b0172a46f5539ebf943dd5418422e4faa8150d3ae5337e92172", "block": 21019772, "supported_from_cache": ""},
+    {"subset_index": 1, "queue_index": 17, "case_id": "defihacklabs-strategyllamalendconvex-2025-07-16", "tx_hash": "0x2ff7c23dca7e9a86c70004696802cbd37d6a77fc4f3e02522b16617045b764f6", "block": 22929493, "supported_from_cache": ""},
+    {"subset_index": 2, "queue_index": 18, "case_id": "defihacklabs-muredistribution-2026-05-21", "tx_hash": "0xb83040361a0ec72fa2d06ad69493226518a5f8b5d96c19b400626248f9c5b798", "block": 25141107, "supported_from_cache": ""},
+    {"subset_index": 3, "queue_index": 19, "case_id": "defihacklabs-unistreetlaunchpad-2026-08-06", "tx_hash": "0x9583e95d5c88c7966e269197f4b09022f26b7a27ad2c13660dda6774e3136d14", "block": 25692311, "supported_from_cache": ""}
+  ]
+}

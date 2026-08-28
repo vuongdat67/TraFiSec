@@ -1,0 +1,16 @@
+{
+  "fixture": "euler_pr199_etoken_artifact.json",
+  "source_repository": "euler-legacy-xyz/euler-contracts",
+  "source_commit": "641de4f587f2d7024704232ae9abc6929cea38ef",
+  "source_file": "contracts/modules/EToken.sol",
+  "patch_semantics": "checkLiquidity(account) immediately before logAssetStatus(assetCache) in donateToReserves",
+  "compiler": "solc 0.8.10",
+  "optimizer_runs": 1000000,
+  "historical_target": "0xbb0d4bb654a21054af95456a3b29c63e8d1f4c0a",
+  "historical_target_block": 16817995,
+  "historical_target_runtime_sha256": "bcaaa3e0103e988568483dd448e9e3e9d8ab7b277128c8be4772b2ebacc6d4fb",
+  "live_target_runtime_sha256": "bcaaa3e0103e988568483dd448e9e3e9d8ab7b277128c8be4772b2ebacc6d4fb",
+  "compiled_patched_runtime_sha256": "c24951535cd928c74efb60d7d758436d7f273944b72578cb2aa5219bd01f0c2e",
+  "bytecode_verified_against_live_patch": false,
+  "verification_note": "The live historical implementation is byte-for-byte unchanged at latest and is not the patched PR runtime. Mutation uses the source-compiled PR runtime as an explicit counterfactual fixture."
+}

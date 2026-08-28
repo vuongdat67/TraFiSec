@@ -1,0 +1,4 @@
+case,mutation,outcome,loss_S,loss_Sm,Δloss,note
+bZx (Feb 2020)/fidelity,fidelity,EXECUTED_UNKNOWN,0,,,"status 0x1, gas 2938769 vs mainnet 3109043 (Δ-5.5%) | native ETH victim loss only; WBTC not converted | separate profit delta {""ETH"": ""71.383351180214322944""}"
+bZx (Feb 2020)/f_fl,f_fl,EXECUTED_UNKNOWN,0,0,0,"status 0x1, gas 189420 vs mainnet N/A (ΔN/A) | native ETH victim loss only; WBTC not converted | separate profit delta {""ETH"": ""-0.0018942""}"
+bZx (Feb 2020)/control_sham,control_sham,EXECUTED_UNKNOWN,0,0,0,"status 0x1, gas 2938769 vs mainnet N/A (ΔN/A) | native ETH victim loss only; WBTC not converted | separate profit delta {""ETH"": ""71.383351180214322944""}"

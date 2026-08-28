@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "policy": "human labels are audited, never inferred or auto-adjudicated",
+  "input_sha256": {
+    "e4_reviewer_a": "d8777a33032b1096bf1ebac99962f9ab52dfc6e4239604af9f304469066a1dab",
+    "e4_reviewer_b": null,
+    "hard_reviewer_a": null,
+    "hard_reviewer_b": null,
+    "e4_final": null,
+    "hard_final": null
+  },
+  "e4": {
+    "expected": 20,
+    "reviewed_complete": 0,
+    "reviewer_ids": [
+      "reviewer_a",
+      ""
+    ],
+    "errors": [
+      "reviewer_a_frozen_set_mismatch"
+    ],
+    "validation_error_counts": {
+      "submission_missing": 37,
+      "eligibility_pending": 3,
+      "eligibility_reason_missing": 3
+    },
+    "disagreement_cases": 0,
+    "disagreements": {},
+    "primary_label_agreement": {
+      "n": 0,
+      "raw_agreement": null,
+      "kappa": null
+    },
+    "ready_for_adjudication": false,
+    "final_sidecar": {
+      "present": false,
+      "valid": false,
+      "errors": [
+        "not_supplied"
+      ]
+    }
+  },
+  "hard_negatives": {
+    "expected": 160,
+    "reviewed_complete": 0,
+    "reviewer_ids": [
+      "",
+      ""
+    ],
+    "errors": [],
+    "validation_error_counts": {
+      "submission_missing": 320
+    },
+    "disagreement_cases": 0,
+    "disagreements": {},
+    "primary_label_agreement": {
+      "n": 0,
+      "raw_agreement": null,
+      "kappa": null
+    },
+    "ready_for_adjudication": false,
+    "final_sidecar": {
+      "present": false,
+      "valid": false,
+      "errors": [
+        "not_supplied"
+      ]
+    }
+  }
+}

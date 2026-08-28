@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "run_id": "e1e3-20260819T130744Z",
+  "experiment": "E1-E3-robustness",
+  "created_at_utc": "2026-08-19T13:07:44.950144+00:00",
+  "git": {
+    "commit": "b4fdf0f77ecbc2da4dc251a6d85d0b0211ff223e",
+    "dirty": true
+  },
+  "runtime": {
+    "python": "3.12.12 (main, Aug 19 2026, 19:56:28) [Clang 17.0.0 (clang-1700.0.13.5)]",
+    "platform": "macOS-15.7.3-x86_64-i386-64bit",
+    "tools": {
+      "anvil": "anvil Version: 1.7.1",
+      "cast": "cast Version: 1.7.1",
+      "forge": "forge Version: 1.7.1"
+    },
+    "packages": {
+      "numpy": "2.5.0",
+      "scipy": "1.18.0",
+      "matplotlib": "3.11.0",
+      "pycryptodome": "3.17",
+      "pytest": "9.1.1",
+      "ruff": "0.15.20"
+    }
+  },
+  "command": [
+    "eval/e1_robustness.py",
+    "--seeds",
+    "30",
+    "--bootstrap",
+    "1000"
+  ],
+  "parameters": {
+    "budgets": [
+      0.001,
+      0.01
+    ],
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71
+    ],
+    "n_boot": 1000
+  },
+  "inputs": {
+    "trace_cache": {
+      "path": "eval/results/e1_trace_cache.jsonl",
+      "sha256": "70843d604454a1c65f8f921889070b537654aa634bfd96a074660fa7e94e4789"
+    },
+    "corpus": {
+      "path": "corpus/incidents.jsonl",
+      "sha256": "0985c4c3e0b293bd5d3ac9a7aa57aa90ffc7bb0b9b1d4ed4e9c9b77b798ab484"
+    }
+  },
+  "extra": {
+    "outputs": [
+      "eval/results/e1_e3_robustness.csv",
+      "eval/results/e1_e3_robustness.json"
+    ]
+  }
+}

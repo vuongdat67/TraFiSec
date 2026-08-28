@@ -1,0 +1,71 @@
+{
+  "cache": "eval/results/e1_trace_cache.jsonl",
+  "raw": {
+    "line_count": 3560,
+    "unique_hashes": 3560,
+    "duplicate_occurrences": 0,
+    "malformed_lines": 0,
+    "label_counts_before_dedup": {
+      "benign": 3480,
+      "attack": 80
+    },
+    "status_counts_before_dedup": {
+      "True": 3461,
+      "False": 94,
+      "None": 5
+    },
+    "rows_with_error": 5
+  },
+  "eligible": {
+    "total": 3461,
+    "attack": 80,
+    "benign": 3381,
+    "explicit_hard_negative": 0,
+    "structural_near_negative": 847
+  },
+  "attack": {
+    "family_counts": {
+      "precision": 3,
+      "governance/access": 26,
+      "accounting": 25,
+      "bridge": 1,
+      "token": 7,
+      "oracle": 12,
+      "flash-loan": 4,
+      "rug-pull": 2
+    },
+    "unique_protocols": 80,
+    "protocols_with_multiple_incidents": {},
+    "block_min": 20834658,
+    "block_max": 25716150
+  },
+  "benign": {
+    "protocol_field_counts": {
+      "block-tx": 3381
+    },
+    "manually_verified_protocol_matched": 0,
+    "label_semantics": "background transaction not present in the incident inventory"
+  },
+  "view_coverage": {
+    "attack": {
+      "call_structure": 80,
+      "token_flow": 79,
+      "state_delta": 80,
+      "economic": 80
+    },
+    "benign": {
+      "call_structure": 3381,
+      "token_flow": 1602,
+      "state_delta": 3381,
+      "economic": 3381
+    }
+  },
+  "scientific_constraints": [
+    "Background negatives are open-world assumed-benign examples, not exhaustively verified benign ground truth.",
+    "Structural near negatives are mined by generic selectors/complexity and are not manually verified protocol/time matches.",
+    "The cache contains no explicit hard-negative rows under the current classifier.",
+    "State-delta coverage is zero; measured screening results use three available views.",
+    "Token-flow coverage differs by label (79/80 attacks versus 1602/3381 background), so coverage-conditioned sensitivity must accompany semantic ablation claims.",
+    "Every attack protocol appears once, so a meaningful held-protocol estimate cannot be computed from this corpus."
+  ]
+}

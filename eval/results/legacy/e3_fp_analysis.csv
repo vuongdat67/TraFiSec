@@ -1,0 +1,7 @@
+fp_budget,group,class,count
+0.001,top_fp,plain,1
+0.001,top_fp,swap_oracle,2
+0.001,top_fp,rule_would_flag,2
+0.01,top_fp,plain,9
+0.01,top_fp,swap_oracle,25
+0.01,top_fp,rule_would_flag,25

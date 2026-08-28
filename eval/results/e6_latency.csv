@@ -1,0 +1,12 @@
+layer,metric,value,unit,method,source
+stage2,replay_per_case_p50,515000.0,ms,measured,n=10; E5 logs wall-time/case
+stage2,replay_per_case_p95,2368000.0,ms,measured,n=10; E5 logs wall-time/case
+stage2,replay_per_case_max,2368000.0,ms,measured,n=10; E5 logs wall-time/case
+stage2,rpc_calls_per_case,200,calls/case,estimated,anvil lazy-fetch ~#accounts touched × ~3 (ước lượng — đo thật bằng --measure-stage2)
+stage1,calls_per_day,7000000,calls/day,estimated,1000000 tx/day × 7 calls/tx
+stage2,replay_cases_per_day,10000,cases/day,estimated,top-1% of 1000000 tx/day (top_k_frac=0.01)
+stage2,calls_per_day,2000000,calls/day,estimated,10000 cases/day × 200 calls/case (anvil lazy-fetch ~accounts touched)
+total,calls_per_day,9000000,calls/day,estimated,stage1 + stage2
+total,usd_per_day_at_scenario_rate,22.5,USD/day,estimated,illustrative sensitivity only; rate=0.25 USD/100k calls; not a provider quote
+capacity,workers_required_at_p50,86,workers,estimated,arrival=10000/day × service=515.0s / target utilization=70%
+capacity,workers_required_at_p95,392,workers,estimated,arrival=10000/day × service=2368.0s / target utilization=70%

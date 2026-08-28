@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "documents": [
+    "paper.md",
+    "paper_vi.md"
+  ],
+  "checks": {
+    "paper_sections": 12,
+    "historical_measured_sections": 4,
+    "readiness_generated_exactly": true,
+    "historical_banners": 5
+  },
+  "errors": []
+}

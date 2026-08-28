@@ -1,0 +1,2 @@
+rank,case_id,tx_hash,block,blind_candidate_factors,protocol_name,supported_from_cache,cache_class,tier,runtime_oracle_mode,trace_evidence,selection_reason
+1,defihacklabs-usm-2026-08-09,0xfae5e751b8ce01457cbb6b529839f24a0cff50faaabcbd0fd02ca0cf559b050e,25716150,f_orc,usm,f_orc,full,1,external-price-feed,known oracle getter in trace,Tier 1 with full cache support.

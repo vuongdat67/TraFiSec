@@ -1,0 +1,3 @@
+ts,tx_hash,label,block,status,source,gas_used,n_calls,n_logs,error,ms
+2026-08-22 09:00:11,0xb5c8bd9430b6cc87a0e2fe110ece6bf527fa4f170a4bc8cd032f768fc5219838,attack,9484688,True,callTracer,3109043,190,43,,0
+2026-08-22 09:24:37,0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d,attack,16817996,True,callTracer,1949994,151,56,,0

@@ -1,0 +1,40 @@
+{
+  "tx_hash": "0xb5c8bd9430b6cc87a0e2fe110ece6bf527fa4f170a4bc8cd032f768fc5219838",
+  "block": 9484688,
+  "mainnet_receipt": {
+    "status": "0x1",
+    "gas_used": 3109043
+  },
+  "baseline": {
+    "mode": "geth",
+    "observed": true,
+    "status": true,
+    "gas_used": 4723126,
+    "error": null,
+    "elapsed_ms": 577
+  },
+  "overrides": [
+    {
+      "mode": "geth",
+      "observed": false,
+      "status": null,
+      "gas_used": null,
+      "error": "RPC debug_traceCall error: {'code': -32602, 'message': 'too many arguments, want at most 3'}",
+      "elapsed_ms": 254
+    },
+    {
+      "mode": "nested",
+      "observed": true,
+      "status": true,
+      "gas_used": 42812,
+      "error": null,
+      "elapsed_ms": 261
+    }
+  ],
+  "baseline_gate": {
+    "observed": true,
+    "gas_matches_receipt": false,
+    "status_matches_receipt": true
+  },
+  "note": "Remote trace only; no transaction broadcast. An override is not causal evidence unless the baseline gate passes."
+}

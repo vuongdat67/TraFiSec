@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "name": "TraceGuard E5 fixed-20",
+  "selection_seed": 42,
+  "frozen_from": "legacy E5 case identities only; legacy state outcomes are not reused",
+  "cases": [
+    {"case_id":"defihacklabs-pegaball-2025-06-03","protocol":"PegaBall","attack_type":"accounting","tx_hash":"0x3cecc3f347edff1d27a0c929f2e7a4c04522afb3a74e24db94684cb6b51b1d65","block":22626978,"tx_index":1,"mainnet_gas":20407687,"reason":"fixed set; one prior transaction warmup"},
+    {"case_id":"defihacklabs-summerfi-2026-07-06","protocol":"SummerFi","attack_type":"accounting","tx_hash":"0x0db528c44f23fc7fa4544684a2fab81096450a14aae8bc89f42cd0592d43da12","block":25471348,"tx_index":0,"mainnet_gas":14989254,"reason":"fixed set"},
+    {"case_id":"defihacklabs-thetanuts-2026-06-15","protocol":"Thetanuts","attack_type":"accounting","tx_hash":"0xbba9f138fe39503bfd1aa62932dbd6ab35d37d23d48e4b7bf2988a9d5dc39fec","block":25323329,"tx_index":0,"mainnet_gas":3717258,"reason":"fixed set"},
+    {"case_id":"defihacklabs-unistreetlaunchpad-2026-08-06","protocol":"UnistreetLaunchpad","attack_type":"governance/access","tx_hash":"0x9583e95d5c88c7966e269197f4b09022f26b7a27ad2c13660dda6774e3136d14","block":25692311,"tx_index":0,"mainnet_gas":2534116,"reason":"fixed set"},
+    {"case_id":"defihacklabs-curve-llamalend-2026-03-02","protocol":"Curve LlamaLend","attack_type":"oracle","tx_hash":"0xb93506af8f1a39f6a31e2d34f5f6a262c2799fef6e338640f42ab8737ed3d8a4","block":24566937,"tx_index":0,"mainnet_gas":11778487,"reason":"fixed set"},
+    {"case_id":"defihacklabs-yeth-2025-12-01","protocol":"yETH","attack_type":"accounting","tx_hash":"0x53fe7ef190c34d810c50fb66f0fc65a1ceedc10309cf4b4013d64042a0331156","block":23914086,"tx_index":0,"mainnet_gas":19321381,"reason":"fixed set; large contract creation"},
+    {"case_id":"defihacklabs-giddyvaultv3-2026-04-23","protocol":"GiddyVaultV3","attack_type":"governance/access","tx_hash":"0x5edb66a4c2ea55bba95d36d27713e3bb1c67c3c4199a8a1759e754c6f25482e5","block":24942492,"tx_index":0,"mainnet_gas":8759248,"reason":"fixed set"},
+    {"case_id":"defihacklabs-presalev5-2025-08-19","protocol":"PresaleV5","attack_type":"oracle","tx_hash":"0x0ef0cde3d8348fdced3adf7d0475ec1364236dd6ab1d8580addad96b004b604a","block":23172640,"tx_index":0,"mainnet_gas":27222544,"reason":"fixed set"},
+    {"case_id":"defihacklabs-mimspell3-2025-10-04","protocol":"MIMSpell3","attack_type":"accounting","tx_hash":"0x842aae91c89a9e5043e64af34f53dc66daf0f033ad8afbf35ef0c93f99a9e5e6","block":23504546,"tx_index":0,"mainnet_gas":2096704,"reason":"fixed set"},
+    {"case_id":"defihacklabs-resupplyfi-2025-06-26","protocol":"ResupplyFi","attack_type":"oracle","tx_hash":"0xffbbd492e0605a8bb6d490c3cd879e87ff60862b0684160d08fd5711e7a872d3","block":22785461,"tx_index":0,"mainnet_gas":5948485,"reason":"fixed set"},
+    {"case_id":"defihacklabs-metapool-2025-06-17","protocol":"MetaPool","attack_type":"governance/access","tx_hash":"0x57ee419a001d85085478d04dd2a73daa91175b1d7c11d8a8fb5622c56fd1fa69","block":22722911,"tx_index":0,"mainnet_gas":27007614,"reason":"fixed set"},
+    {"case_id":"defihacklabs-lauratoken-2025-01-01","protocol":"LAURAToken","attack_type":"token","tx_hash":"0xef34f4fdf03e403e3c94e96539354fb4fe0b79a5ec927eacc63bc04108dbf420","block":21529888,"tx_index":0,"mainnet_gas":1508071,"reason":"fixed set"},
+    {"case_id":"defihacklabs-multitransferswap-2025-04-27","protocol":"multitransferswap","attack_type":"accounting","tx_hash":"0xbb82787a24d9b8d1047bbc12fe5d4b8d4ad3fc3e32e997985043ec3ef6d7dffe","block":22361154,"tx_index":0,"mainnet_gas":22446977,"reason":"fixed set"},
+    {"case_id":"defihacklabs-cow-2024-11-07","protocol":"CoW","attack_type":"governance/access","tx_hash":"0x2fc9f2fd393db2273abb9b0451f9a4830aa2ebd5490d453f1a06a8e9e5edc4f9","block":21135438,"tx_index":0,"mainnet_gas":72252,"reason":"fixed set"},
+    {"case_id":"defihacklabs-aaveboost-2025-06-12","protocol":"AAVEBoost","attack_type":"accounting","tx_hash":"0xc4ef3b5e39d862ffcb8ff591fbb587f89d9d4ab56aec70cfb15831782239c0ce","block":22685444,"tx_index":0,"mainnet_gas":8743396,"reason":"fixed set"},
+    {"case_id":"defihacklabs-sashatoken-2024-10-06","protocol":"SASHAToken","attack_type":"oracle","tx_hash":"0xd9fdc7d03eec28fc2453c5fa68eff82d4c297f436a6a5470c54ca3aecd2db17e","block":20905302,"tx_index":0,"mainnet_gas":429891,"reason":"fixed set"},
+    {"case_id":"defihacklabs-erc20transfer-2024-10-22","protocol":"Erc20transfer","attack_type":"governance/access","tx_hash":"0x7f2540af4a1f7b0172a46f5539ebf943dd5418422e4faa8150d3ae5337e92172","block":21019772,"tx_index":0,"mainnet_gas":176487,"reason":"fixed set"},
+    {"case_id":"defihacklabs-vrug-2024-11-07","protocol":"VRug","attack_type":"rug-pull","tx_hash":"0x5e151627dc06ec4f2db5be2f48248f320ad3450aba42b1bbd00131bcbaa4f0ae","block":21138660,"tx_index":0,"mainnet_gas":73001,"reason":"fixed set"},
+    {"case_id":"defihacklabs-alkimiya-io-2025-03-28","protocol":"Alkimiya_IO","attack_type":"precision","tx_hash":"0x9b9a6dd05526a8a4b40e5e1a74a25df6ecccae6ee7bf045911ad89a1dd3f0814","block":22146340,"tx_index":0,"mainnet_gas":511701,"reason":"fixed set"},
+    {"case_id":"defihacklabs-scorch-2025-02-11","protocol":"Scorch","attack_type":"oracle","tx_hash":"0x02dc4409af99de400b2427dad525c31467a8fd2ac6cb251f885d33c073510ba2","block":21822424,"tx_index":0,"mainnet_gas":648332,"reason":"fixed set"}
+  ]
+}

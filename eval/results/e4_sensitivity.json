@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "policy": "fixed scenarios; no row selection or replacement",
+  "scenarios": {
+    "lower_valuation_20pct": {
+      "valuation_multiplier": 0.8,
+      "threshold_multiplier": 1.0,
+      "analyzable": 0,
+      "changed_from_recorded_primary": 0,
+      "verdict_counts": {},
+      "by_factor": {}
+    },
+    "primary": {
+      "valuation_multiplier": 1.0,
+      "threshold_multiplier": 1.0,
+      "analyzable": 0,
+      "changed_from_recorded_primary": 0,
+      "verdict_counts": {},
+      "by_factor": {}
+    },
+    "higher_valuation_20pct": {
+      "valuation_multiplier": 1.2,
+      "threshold_multiplier": 1.0,
+      "analyzable": 0,
+      "changed_from_recorded_primary": 0,
+      "verdict_counts": {},
+      "by_factor": {}
+    },
+    "half_harm_threshold": {
+      "valuation_multiplier": 1.0,
+      "threshold_multiplier": 0.5,
+      "analyzable": 0,
+      "changed_from_recorded_primary": 0,
+      "verdict_counts": {},
+      "by_factor": {}
+    },
+    "double_harm_threshold": {
+      "valuation_multiplier": 1.0,
+      "threshold_multiplier": 2.0,
+      "analyzable": 0,
+      "changed_from_recorded_primary": 0,
+      "verdict_counts": {},
+      "by_factor": {}
+    }
+  },
+  "input_interventions": 0,
+  "input": "eval/results/e4_necessity.csv"
+}

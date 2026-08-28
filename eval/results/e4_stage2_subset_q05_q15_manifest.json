@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "experiment": "E4-stage2-systematic-subset-extension",
+  "status": "protocol-frozen-before-execution",
+  "source_queue": "eval/e4_fixed_set_v2.json",
+  "source_queue_sha256": "54adbd4f2348384cc858124882f148948c3ad704daf368a70ea63912cab0781c",
+  "selection_rule": "remaining technically selectable cases in fixed-20 queue order after the frozen q00-q04 run",
+  "subset_size": 11,
+  "technical_selectability": [
+    "valid 32-byte transaction hash",
+    "positive historical block number",
+    "at least one supported mutation in frozen cache metadata",
+    "no uncertain mutation marker",
+    "non-empty trace evidence"
+  ],
+  "replacement_policy": "No replacement after runtime starts; provider, transport, or EVM failure is recorded as INCONCLUSIVE.",
+  "outcome_taxonomy": ["CAUSE", "NO_EFFECT", "REVERT", "INCONCLUSIVE"],
+  "stop_conditions": [
+    "missing prepared context or proof input",
+    "baseline fidelity/proof gate failure",
+    "mutation applicability or validity cannot be established",
+    "harm oracle unavailable or valuation evidence missing",
+    "provider/process timeout; record UNOBSERVED/INCONCLUSIVE, never causal"
+  ],
+  "selected_cases": [
+    {"subset_index": 0, "queue_index": 5, "case_id": "defihacklabs-veth-2024-11-14", "tx_hash": "0x1ae40f26819da4f10bc7c894a2cc507cdb31c29635d31fa90c8f3f240f0327c0", "block": 21184784, "supported_from_cache": "f_orc"},
+    {"subset_index": 1, "queue_index": 6, "case_id": "defihacklabs-rnspay-2025-03-06", "tx_hash": "0x69a825ffedeb4461afc95e21475c011b1675a95d318bb1dd63b13307dfe3b9ed", "block": 21988706, "supported_from_cache": "f_orc"},
+    {"subset_index": 2, "queue_index": 7, "case_id": "defihacklabs-fixedtokenbswap-2025-06-15", "tx_hash": "0x5db22f0edc1a9eda5343573da27dd2168c8a36a7f948401db76e22ba1fab71ea", "block": 22710988, "supported_from_cache": "f_orc"},
+    {"subset_index": 3, "queue_index": 8, "case_id": "defihacklabs-unverified-6f7a-2025-08-22", "tx_hash": "0x653b185a57fb5909180fe4eede67e51c5e9b70af16937382f86d5aefe635e5a7", "block": 23196046, "supported_from_cache": "f_orc"},
+    {"subset_index": 4, "queue_index": 9, "case_id": "defihacklabs-alkemiearn-2026-03-10", "tx_hash": "0xa17001eb39f867b8bed850de9107018a2d2503f95f15e4dceb7d68fff5ef6d9d", "block": 24626979, "supported_from_cache": "f_orc"},
+    {"subset_index": 5, "queue_index": 10, "case_id": "defihacklabs-summerfi-2026-07-06", "tx_hash": "0x0db528c44f23fc7fa4544684a2fab81096450a14aae8bc89f42cd0592d43da12", "block": 25471348, "supported_from_cache": "f_orc"},
+    {"subset_index": 6, "queue_index": 11, "case_id": "defihacklabs-exchangeissuance-index-coop-2026-07-30", "tx_hash": "0x7f45428df558fba1d19ab115effef8ecd1e6e05b491f02202b0815e47b8d658b", "block": 25644621, "supported_from_cache": "f_orc"},
+    {"subset_index": 7, "queue_index": 12, "case_id": "defihacklabs-sashatoken-2024-10-06", "tx_hash": "0xd9fdc7d03eec28fc2453c5fa68eff82d4c297f436a6a5470c54ca3aecd2db17e", "block": 20905302, "supported_from_cache": "f_orc"},
+    {"subset_index": 8, "queue_index": 13, "case_id": "defihacklabs-sbr-token-2025-03-07", "tx_hash": "0xe4c1aeacf8c93f8e39fe78420ce7a114ecf59dea90047cd2af390b30af54e7b9", "block": 21991722, "supported_from_cache": "f_orc"},
+    {"subset_index": 9, "queue_index": 14, "case_id": "defihacklabs-multitransferswap-2025-04-27", "tx_hash": "0xbb82787a24d9b8d1047bbc12fe5d4b8d4ad3fc3e32e997985043ec3ef6d7dffe", "block": 22361154, "supported_from_cache": "f_orc"},
+    {"subset_index": 10, "queue_index": 15, "case_id": "defihacklabs-usm-2026-08-09", "tx_hash": "0xfae5e751b8ce01457cbb6b529839f24a0cff50faaabcbd0fd02ca0cf559b050e", "block": 25716150, "supported_from_cache": "f_orc"}
+  ],
+  "technical_exclusions": [
+    {"queue_index": 16, "case_id": "defihacklabs-erc20transfer-2024-10-22", "reason": "no_supported_mutation_in_cache"},
+    {"queue_index": 17, "case_id": "defihacklabs-strategyllamalendconvex-2025-07-16", "reason": "no_supported_mutation_in_cache"},
+    {"queue_index": 18, "case_id": "defihacklabs-muredistribution-2026-05-21", "reason": "no_supported_mutation_in_cache"},
+    {"queue_index": 19, "case_id": "defihacklabs-unistreetlaunchpad-2026-08-06", "reason": "no_supported_mutation_in_cache"}
+  ]
+}

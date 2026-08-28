@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "source": "eval/results/runs/e4-stage2-authoritative-20260826/review_submissions",
+  "run_id": "e4-stage2-authoritative-20260826",
+  "expected_cases": 20,
+  "reviewed_case_count": 5,
+  "reviewers": {
+    "reviewer_a": {
+      "rows_present": 5,
+      "frozen_set_exact": false,
+      "complete_rows": 5,
+      "errors": {}
+    },
+    "reviewer_b": {
+      "rows_present": 5,
+      "frozen_set_exact": false,
+      "complete_rows": 5,
+      "errors": {}
+    }
+  },
+  "complete_pair_count": 5,
+  "disagreement_cases": 1,
+  "disagreements": {
+    "defihacklabs-thetanuts-2026-06-15": [
+      "proposed_outcome"
+    ]
+  },
+  "execution_denominators": {
+    "source": null,
+    "attempted": null,
+    "observed": null,
+    "valid": null,
+    "harm_measured": null,
+    "note": "No explicit outcomes file supplied; execution denominators are not inferred."
+  },
+  "ready_for_adjudication": false
+}

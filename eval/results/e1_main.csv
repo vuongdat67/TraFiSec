@@ -1,0 +1,3 @@
+scale,n_train,n_test,fp_budget,precision,recall,f1,auc_pr,threshold_source,threshold,realized_fpr,allowed_fp,fp,tp,budget_satisfied_on_test
+A1,2764,697,0.001,0.0,0.0,0.0,0.640974,calibration,0.513565813,0.0,0,0,0,True
+A1,2764,697,0.01,0.666667,0.5,0.571429,0.640974,calibration,0.089817915,0.00738552,6,5,10,True

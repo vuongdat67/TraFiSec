@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "run_id": "hard-negative-queue-20260824T042622Z",
+  "experiment": "hard-negative-review-queue",
+  "created_at_utc": "2026-08-24T04:26:22.795025+00:00",
+  "git": {
+    "commit": "bc82cf5a4015e3fa218e2af588b95d0eb57b8c3a",
+    "dirty": true
+  },
+  "runtime": {
+    "python": "3.12.12 (main, Aug 19 2026, 19:56:28) [Clang 17.0.0 (clang-1700.0.13.5)]",
+    "platform": "macOS-15.7.3-x86_64-i386-64bit",
+    "tools": {
+      "anvil": "anvil Version: 1.7.1",
+      "cast": "cast Version: 1.7.1",
+      "forge": "forge Version: 1.7.1"
+    },
+    "packages": {
+      "numpy": "2.5.0",
+      "scipy": "1.18.0",
+      "matplotlib": "3.11.0",
+      "pycryptodome": "3.17",
+      "pytest": "9.1.1",
+      "ruff": "0.15.20"
+    }
+  },
+  "command": [
+    "eval/hard_negative_queue.py",
+    "--cache",
+    "eval/artifacts/e1_trace_cache.jsonl.gz"
+  ],
+  "parameters": {
+    "per_incident": 2,
+    "max_per_cluster": 2
+  },
+  "inputs": {
+    "trace_cache": {
+      "path": "eval/artifacts/e1_trace_cache.jsonl.gz",
+      "sha256": "498d5708b3fd2dfbc1acc45e75261c9b9539c66f16954f27b2f798b7a3b43b82"
+    }
+  },
+  "extra": {
+    "outputs": [
+      "eval/results/hard_negative_review_queue.csv",
+      "eval/results/hard_negative_review_queue.json"
+    ]
+  }
+}

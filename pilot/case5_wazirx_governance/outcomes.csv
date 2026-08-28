@@ -1,0 +1,8 @@
+case,mutation,outcome,loss_S,loss_Sm,Δloss,note
+WazirX (Jul 2024) — GnosisSafe key compromise,f_auth_revoke:0xd967113224C354600B3151E27Aaba53e3034f372,REVERTED,,,,"revoke owner (mode A, linked-list; GS026 artifact — sig position invalidated, NOT evidence owner signed)"
+WazirX (Jul 2024) — GnosisSafe key compromise,f_auth_revoke:0xfA54B4085811aef6ACf47D51B05FdA188DEAe28b,REVERTED,,,,"revoke owner (mode A, linked-list; GS026 artifact)"
+WazirX (Jul 2024) — GnosisSafe key compromise,f_auth_revoke:0x9AF78003CecC2383d9D576A49c0C6b17fc34Ae34,REVERTED,,,,"revoke owner (mode A, linked-list; GS026 artifact)"
+WazirX (Jul 2024) — GnosisSafe key compromise,f_auth_revoke:0xD83b89E261D02B0f2f9E384B44907f8d380E9AF0,REVERTED,,,,"revoke owner (mode A, linked-list; GS026 artifact)"
+WazirX (Jul 2024) — GnosisSafe key compromise,f_auth_revoke:0x10F16CdE93f1bC9C38a9e31C8DB0eEb89a744824,REVERTED,,,,revoke owner #5 NON-SIGNER (mode A; GS026 artifact)
+WazirX (Jul 2024) — GnosisSafe key compromise,f_auth_revoke:0xaE648f68823bc164CA3ad1f5f5dC0057d9d515aD,REVERTED,,,,revoke owner #6 NON-SIGNER (mode A; GS026 artifact)
+WazirX (Jul 2024) — GnosisSafe key compromise,f_auth_swap,REVERTED,,,,"actor-swap (mode B, insert head; GS026 artifact — Safe signature bound to exact owner-map)"

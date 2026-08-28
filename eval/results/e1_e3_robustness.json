@@ -1,0 +1,58 @@
+{
+  "cache_rows": 3461,
+  "class_counts": {
+    "benign": 3381,
+    "attack": 80
+  },
+  "n_repeated_seeds": 30,
+  "bootstrap_ci_reference_seed": 42,
+  "bootstrap": {
+    "method": "positive-incident / negative-block cluster bootstrap percentile",
+    "n_boot": 1000,
+    "seed": 20260812,
+    "n_positive_incidents": 20,
+    "n_negative_clusters": 37,
+    "intervals": {
+      "auc_pr": {
+        "low": 0.4399052,
+        "median": 0.6559,
+        "high": 0.82977795
+      },
+      "recall@0.001": {
+        "low": 0.0,
+        "median": 0.0,
+        "high": 0.0
+      },
+      "precision@0.001": {
+        "low": 0.0,
+        "median": 0.0,
+        "high": 0.0
+      },
+      "recall@0.01": {
+        "low": 0.3,
+        "median": 0.5,
+        "high": 0.7
+      },
+      "precision@0.01": {
+        "low": 0.466667,
+        "median": 0.666667,
+        "high": 0.9
+      }
+    }
+  },
+  "experiments": {
+    "E1-repeated-stratified": 60,
+    "E1-temporal": 2,
+    "E2-held-family": 16,
+    "E3-near-negative": 2,
+    "E3-token-flow-covered": 2
+  },
+  "caveats": [
+    "0.1% FPR is empirically unresolved when a split has fewer than 1000 benign examples; allowed_fp is then zero.",
+    "Near negatives are structurally mined benign transactions, not manually verified protocol-matched hard negatives.",
+    "Held families with fewer than three incidents are diagnostic only (family_primary=false).",
+    "The current cache has no state-delta view coverage; results characterize the available three-view signal.",
+    "The token-flow-covered split conditions on view coverage and is diagnostic, not a deployment-prevalence estimate.",
+    "FPR thresholds are selected on calibration data and frozen before test evaluation; test-set budget violations are reported, not optimized away."
+  ]
+}

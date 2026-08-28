@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "random_seed": 42,
+  "split_resamples": 30,
+  "bootstrap_samples": 1000,
+  "fpr_budgets": [0.001, 0.01],
+  "threshold_selection": "calibration_split",
+  "score_ties": "threshold_grouped",
+  "e5_fixed_set": "eval/fidelity_set_v2.json",
+  "e5_state_target": "prestateTracer.diff.post",
+  "e4_annotation_schema": "corpus/annotations/e4.schema.json",
+  "hard_negative_schema": "corpus/annotations/hard_negative.schema.json"
+}
+

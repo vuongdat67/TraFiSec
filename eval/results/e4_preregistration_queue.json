@@ -1,0 +1,13 @@
+{
+  "attack_rows_scanned": 80,
+  "queue_rows": 63,
+  "with_cache_supported_factor": 39,
+  "candidate_factor_counts": {
+    "f_fl": 4,
+    "f_orc": 36,
+    "f_auth?": 53
+  },
+  "paper_eligible": 0,
+  "label_blinding": "legacy gt_factors and attack_type are intentionally omitted",
+  "warning": "Trace candidates are not causal labels. Eligibility requires schema-v2 human adjudication."
+}

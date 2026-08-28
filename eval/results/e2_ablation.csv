@@ -1,0 +1,11 @@
+config,views,n_test_attack,n_test_benign,fp_budget,precision,recall,f1,auc_pr,threshold,realized_fpr,fp,tp,budget_satisfied_on_test
+full,call_structure+token_flow+state_delta+economic,20,677,0.001,0.0,0.0,0.0,0.640974,0.513565813,0.0,0,0,True
+full,call_structure+token_flow+state_delta+economic,20,677,0.01,0.666667,0.5,0.571429,0.640974,0.089817915,0.00738552,5,10,True
+no_call_structure,token_flow+state_delta+economic,20,677,0.001,1.0,0.25,0.4,0.591713,0.219853724,0.0,0,5,True
+no_call_structure,token_flow+state_delta+economic,20,677,0.01,0.692308,0.45,0.545455,0.591713,0.074383986,0.00590842,4,9,True
+no_token_flow,call_structure+state_delta+economic,20,677,0.001,1.0,0.1,0.181818,0.593459,0.140831525,0.0,0,2,True
+no_token_flow,call_structure+state_delta+economic,20,677,0.01,0.636364,0.7,0.666667,0.593459,0.023423825,0.01181684,8,14,False
+no_state_delta,call_structure+token_flow+economic,20,677,0.001,1.0,0.15,0.26087,0.640591,0.373189436,0.0,0,3,True
+no_state_delta,call_structure+token_flow+economic,20,677,0.01,0.666667,0.5,0.571429,0.640591,0.126905774,0.00738552,5,10,True
+no_economic,call_structure+token_flow+state_delta,20,677,0.001,0.666667,0.1,0.173913,0.620563,0.32443486,0.0014771,1,2,False
+no_economic,call_structure+token_flow+state_delta,20,677,0.01,0.6875,0.55,0.611111,0.620563,0.105640678,0.00738552,5,11,True

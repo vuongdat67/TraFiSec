@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "run_id": "cache-release-20260812T140024Z",
+  "source_name": "e1_trace_cache.jsonl",
+  "source_bytes": 73174554,
+  "source_sha256": "70843d604454a1c65f8f921889070b537654aa634bfd96a074660fa7e94e4789",
+  "compressed_name": "e1_trace_cache.jsonl.gz",
+  "compressed_bytes": 4923799,
+  "compressed_sha256": "498d5708b3fd2dfbc1acc45e75261c9b9539c66f16954f27b2f798b7a3b43b82",
+  "compression": "gzip level 9; mtime=0"
+}

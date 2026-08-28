@@ -1,0 +1,9 @@
+rank,case_id,tx_hash,block,blind_candidate_factors,protocol_name,supported_from_cache,cache_class,tier,trace_evidence,selection_reason
+1,defihacklabs-aventarewardclaim-2025-04-27,0x59446b1f58457c83d18864bbfaa8930c9438da33017ad41f08397cf79a8c63e5,22358983,f_orc,aventarewardclaim,f_orc,full,1,known oracle getter in trace,Tier 1 with full cache support.
+2,defihacklabs-bankrollstackplus-2025-06-18,0x8905a0aca5849626c0de026c2d2894ddfa8060a27725221f01aac9fb0b3d6629,22734355,f_orc,bankrollstackplus,f_orc,full,1,known oracle getter in trace,Tier 1 with full cache support.
+3,defihacklabs-bubai-2024-10-29,0x1b4730e715286862042def956d5aaa6a53203ee02b97ea913de73fa462e48f90,21074246,f_orc,bubai,f_orc,full,1,known oracle getter in trace,Tier 1 with full cache support.
+4,defihacklabs-gradientmakerpool-2025-06-23,0xb5cfa3f86ce9506e2364475dc43c44de444b079d4752edbffcdad7d1654b1f67,22765114,f_orc,gradientmakerpool,f_orc,full,1,known oracle getter in trace,Tier 1 with full cache support.
+5,defihacklabs-mcai-2025-01-28,0xfbe3bc868d555ef617bb1c32d1d8d5ec8b825bf2b4795dd99b47b321f36f3c21,21720381,f_orc,mcai,f_orc,full,1,known oracle getter in trace,Tier 1 with full cache support.
+6,defihacklabs-multitransferswap-2025-04-27,0xbb82787a24d9b8d1047bbc12fe5d4b8d4ad3fc3e32e997985043ec3ef6d7dffe,22361154,f_orc,multitransferswap,f_orc,full,1,known oracle getter in trace,Tier 1 with full cache support.
+7,defihacklabs-sashatoken-2024-10-06,0xd9fdc7d03eec28fc2453c5fa68eff82d4c297f436a6a5470c54ca3aecd2db17e,20905302,f_orc,sashatoken,f_orc,full,1,known oracle getter in trace,Tier 1 with full cache support.
+8,defihacklabs-sbr-token-2025-03-07,0xe4c1aeacf8c93f8e39fe78420ce7a114ecf59dea90047cd2af390b30af54e7b9,21991722,f_orc,sbr-token,f_orc,full,1,known oracle getter in trace,Tier 1 with full cache support.

@@ -1,0 +1,16 @@
+{
+  "queue_rows": 160,
+  "annotation_records": 0,
+  "completed_review_records": 0,
+  "paper_eligible_hard_negatives": 0,
+  "duplicate_candidate_hashes": [],
+  "orphan_candidate_hashes": [],
+  "parse_errors": {},
+  "validation_error_counts": {},
+  "reviewer_label_agreement": {
+    "n": 0,
+    "raw_agreement": null,
+    "kappa": null
+  },
+  "eligibility_contract": "schema v2 + same protocol + preregistered time window + resolved benign mechanism + two distinct reviewers + adjudication + evidence"
+}

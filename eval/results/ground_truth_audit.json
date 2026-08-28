@@ -1,0 +1,30 @@
+{
+  "onchain_records": 80,
+  "legacy_label_tiers": {
+    "legacy_auto_heuristic": 16,
+    "unknown": 43,
+    "legacy_source_only": 21
+  },
+  "causal_sidecar_records": 0,
+  "valid_causal_sidecars": 0,
+  "independent_reviews_complete": 0,
+  "paper_e4_eligible": 0,
+  "duplicate_case_ids": [],
+  "orphan_case_ids": [],
+  "parse_errors": {},
+  "validation_error_counts": {},
+  "reviewer_agreement": {
+    "eligibility": {
+      "n": 0,
+      "raw_agreement": null,
+      "kappa": null
+    },
+    "root_cause_exact_set": {
+      "n": 0,
+      "raw_agreement": null,
+      "kappa": null
+    }
+  },
+  "eligibility_contract": "schema v2 + two distinct reviewers + adjudication + security objective + supported intervention + victim valuation + causal calls + evidence",
+  "conclusion": "Legacy gt_factors are not adjudicated causal ground truth and cannot support E4 accuracy claims."
+}

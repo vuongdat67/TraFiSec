@@ -1,0 +1,4 @@
+case,mutation,outcome,loss_S,loss_Sm,Δloss,note
+Cream Finance (Aug 2021)/fidelity,fidelity,EXECUTED_UNKNOWN,,,,"status 0x1, gas 1562994 vs mainnet 1531409 (Δ2.1%)"
+Cream Finance (Aug 2021)/f_fl,f_fl,REVERTED,,,,"status 0x0, gas 128573"
+Cream Finance (Aug 2021)/f_swap,f_swap,REVERTED,,,,"status 0x0, gas 1241772 vs mainnet 1531409 (cap borrow word2 -> 0; tx chay gan het roi revert - borrow 0 khong sinh profit de repay flash swap); REVERTED = precondition, khong tinh CAUSE truc tiep (outcome guard E4)"

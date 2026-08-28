@@ -1,0 +1,7 @@
+baseline,scope,n_test,fp_budget,precision,recall,f1,tp,fp,allowed_fp,realized_fpr,budget_satisfied_on_test,auc_pr,scale
+rule_flash_oracle,internal_proxy_not_external_reimplementation,697,0.001,0.0,0.0,0.0,0,0,0,0.0,True,0.125825,A1
+rule_flash_oracle,internal_proxy_not_external_reimplementation,697,0.01,0.0,0.0,0.0,0,0,6,0.0,True,0.125825,A1
+invariant_balance,internal_proxy_not_external_reimplementation,697,0.001,0.0,0.0,0.0,0,0,0,0.0,True,0.041299,A1
+invariant_balance,internal_proxy_not_external_reimplementation,697,0.01,0.0,0.0,0.0,0,0,6,0.0,True,0.041299,A1
+static_smartaxe,internal_proxy_not_external_reimplementation,697,0.001,0.0,0.0,0.0,0,0,0,0.0,True,0.076195,A1
+static_smartaxe,internal_proxy_not_external_reimplementation,697,0.01,0.0,0.0,0.0,0,0,6,0.0,True,0.076195,A1

@@ -1,0 +1,100 @@
+case,factor_gt,mutation,outcome,loss_S,loss_Sm,dloss,cause,factor_match,note
+pilot-cream-oracle,f_fl+f_swap,fidelity,EXECUTED_NO_HARM,,,,,,"fidelity: status 0x1, gas 1562994 vs mainnet 1531409 (Δ2.1%); viol(S)=1"
+pilot-cream-oracle,f_fl+f_swap,f_fl,REVERTED,0,0,0,,inconclusive,"status 0x0, gas 128573; outcome(S−f_fl)=REVERTED; viol(S)=1 → INCONCLUSIVE-revert"
+pilot-cream-oracle,f_fl+f_swap,f_swap,REVERTED,0,0,0,,inconclusive,"status 0x0, gas 1237420; outcome(S−f_swap)=REVERTED; viol(S)=1 → INCONCLUSIVE-revert"
+pilot-euler-flashloan,f_fl,fidelity,EXECUTED_NO_HARM,,,,,,"fidelity: status 0x1, gas 1950117 vs mainnet 1949994 (Δ0.0%); viol(S)=1"
+pilot-euler-flashloan,f_fl,f_fl,REVERTED,0,0,0,,inconclusive,"status 0x0, gas 43145; outcome(S−f_fl)=REVERTED; viol(S)=1 → INCONCLUSIVE-revert"
+pilot-wazirx-safe,f_auth,no_mutation,,,,,,inconclusive,f_auth skip: GnosisSafe 0x27fd43ba (permission-gated — không dùng AuthRevoke) — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-usm-2026-08-09,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0x8a10de9a ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-strongblock-2026-08-05,f_swap+f_auth,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0x99a88ec4 ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production); f_auth skip: không thấy EIP-1967 proxy trong trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)"
+defihacklabs-exchangeissuance-index-coop-2026-07-30,f_orc,no_mutation,,,,,,inconclusive,f_orc skip: oracle=N/A why=không thấy STATICCALL oracle getter trong trace price=N/A stub=OK
+defihacklabs-projekt-reward-vault-2026-07-25,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-lien-finance-2026-07-24,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0xa5514ef8 ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-compoundprovider-2026-07-16,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0xe321fa05 ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-summerfi-2026-07-06,f_orc,fidelity,EXECUTED_NO_HARM,,,,,,"fidelity: status 0x1, gas 14984045 vs mainnet 14989254 (Δ-0.0%); viol(S)=1"
+defihacklabs-summerfi-2026-07-06,f_orc,f_orc,REVERTED,0,0,0,,inconclusive,"status 0x0, gas 15790449; outcome(S−f_orc)=REVERTED; viol(S)=1 → INCONCLUSIVE-revert"
+defihacklabs-aztec-v1-2026-06-17,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0xd1c65264 ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-thetanuts-2026-06-15,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-topbpool-2026-06-09,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-novabox-2026-06-09,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-ambientcrocswapdex-2026-06-07,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0x00010000 ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-squidroutermodule-2026-05-25,f_auth,no_mutation,,,,,,inconclusive,f_auth skip: GnosisSafe 0xc52950d5 (permission-gated — không dùng AuthRevoke) — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-new-market-trading-2026-05-25,f_auth,fidelity,EXECUTED_NO_HARM,,,,,,"fidelity: status 0x1, gas 521811 vs mainnet 521811 (Δ0.0%); viol(S)=1"
+defihacklabs-new-market-trading-2026-05-25,f_auth,f_auth(A),EXECUTED_NO_HARM,0,0,0,1,match,"status 0x1, gas 521811 vs mainnet None (Δ0.0%); outcome(S−f_auth(A))=EXECUTED_NO_HARM; viol(S)=1 → CAUSE"
+defihacklabs-wusdfi-2026-05-25,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-muredistribution-2026-05-21,f_auth,f_auth(A),REVERTED,0,,,,inconclusive,send fail/timeout (cần --timeout 480+); outcome(S−f_auth(A))=REVERTED; viol(S)=0 → INCONCLUSIVE-revert
+defihacklabs-adsharesbridge-2026-05-15,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-trustedvolumes-2026-05-07,f_auth,f_auth(A),REVERTED,0,,,,inconclusive,send fail/timeout (cần --timeout 480+); outcome(S−f_auth(A))=REVERTED; viol(S)=0 → INCONCLUSIVE-revert
+defihacklabs-ekubo-2026-05-05,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-rwavault-2026-04-28,f_auth,fidelity,EXECUTED_NO_HARM,,,,,,"fidelity: status 0x1, gas 851456 vs mainnet 851456 (Δ0.0%); viol(S)=1"
+defihacklabs-rwavault-2026-04-28,f_auth,f_auth(A),EXECUTED_NO_HARM,0,0,0,1,match,"status 0x1, gas 851456 vs mainnet None (Δ0.0%); outcome(S−f_auth(A))=EXECUTED_NO_HARM; viol(S)=1 → CAUSE"
+defihacklabs-unverified-a152-2026-04-27,f_auth,f_auth(A),REVERTED,0,,,,inconclusive,send fail/timeout (cần --timeout 480+); outcome(S−f_auth(A))=REVERTED; viol(S)=0 → INCONCLUSIVE-revert
+defihacklabs-thetanutsvaultsharerounding-2026-04-20,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-stakeonme-2026-03-15,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-alkemiearn-2026-03-10,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-curve-llamalend-2026-03-02,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0x8201355f ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-yeth-2025-12-01,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-mimspell3-2025-10-04,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-0xf340-2025-08-27,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-unverified-6f7a-2025-08-22,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-presalev5-2025-08-19,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-autopooledtradingbot-2025-08-17,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-sizecredit-2025-08-15,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-anyswapwethpermit-2025-07-29,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0x8cbf8566 ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-unverified670471-2025-07-26,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-whereismydragontreasure-2025-07-25,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-swappstaking-2025-07-24,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-emptysetreserve-2025-07-24,f_fl+f_orc,no_mutation,,,,,,inconclusive,f_fl skip: UniswapV2.swap nhưng không phải flash swap (không có callback 10d1e85c); f_orc skip: oracle=N/A why=không thấy STATICCALL oracle getter trong trace price=N/A stub=OK
+defihacklabs-strategyllamalendconvex-2025-07-16,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0x5a606a56 ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-initcodefactoryfees-2025-06-28,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-resupplyfi-2025-06-26,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-silofinance-2025-06-25,f_auth,fidelity,EXECUTED_NO_HARM,,,,,,"fidelity: status 0x1, gas 373459 vs mainnet 373375 (Δ0.0%); viol(S)=1"
+defihacklabs-silofinance-2025-06-25,f_auth,f_auth(A),EXECUTED_NO_HARM,0,0,0,1,match,"status 0x1, gas 373459 vs mainnet None (Δ0.0%); outcome(S−f_auth(A))=EXECUTED_NO_HARM; viol(S)=1 → CAUSE"
+defihacklabs-paraswapdaiapproval-2025-06-25,f_auth+f_fl,f_auth(A),REVERTED,0,,,,inconclusive,send fail/timeout (cần --timeout 480+); outcome(S−f_auth(A))=REVERTED; viol(S)=0 → INCONCLUSIVE-revert
+defihacklabs-paraswapdaiapproval-2025-06-25,f_auth+f_fl,f_fl,REVERTED,0,,,,inconclusive,send fail/timeout (cần --timeout 480+); outcome(S−f_fl)=REVERTED; viol(S)=0 → INCONCLUSIVE-revert
+defihacklabs-gradientmakerpool-2025-06-23,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-bankrollstackplus-2025-06-18,f_fl+f_auth,no_mutation,,,,,,inconclusive,f_fl skip: UniswapV2.swap nhưng không phải flash swap (không có callback 10d1e85c); f_auth skip: không thấy EIP-1967 proxy trong trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-metapool-2025-06-17,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-fixedtokenbswap-2025-06-15,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0x60806040 ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-aaveboost-2025-06-12,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-pegaball-2025-06-03,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-usualmoney-2025-05-27,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-multitransferswap-2025-04-27,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0x60806040 ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-aventarewardclaim-2025-04-27,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-ampkashi-2025-04-07,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0x1d828cfc ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-alkimiya-io-2025-03-28,f_fl,no_mutation,,,,,,inconclusive,f_fl skip: không thấy selector flashLoan trong trace
+defihacklabs-uni-2025-03-07,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-sbr-token-2025-03-07,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-rnspay-2025-03-06,f_auth,f_auth(A),REVERTED,0,,,,inconclusive,send fail/timeout (cần --timeout 480+); outcome(S−f_auth(A))=REVERTED; viol(S)=0 → INCONCLUSIVE-revert
+defihacklabs-hegicoptions-2025-02-23,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-scorch-2025-02-11,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-peapods-finance-2025-02-08,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-mcai-2025-01-28,f_auth+f_swap,no_mutation,,,,,,inconclusive,"f_auth skip: không thấy EIP-1967 proxy trong trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng); f_swap skip: top-level calldata 0x44df8e70 ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-idolsnft-2025-01-14,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-unilend-2025-01-12,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-lauratoken-2025-01-01,f_swap,no_mutation,,,,,,inconclusive,"f_swap skip: top-level calldata 0x60806040 ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-mainnetsettler-2024-11-20,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+11-07,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-cow-2024-11-07,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-vrug-2024-11-07,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-bubai-2024-10-29,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-erc20transfer-2024-10-22,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-morphoblue-2024-10-13,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-sashatoken-2024-10-06,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-xlootstaking-2026-04-15,f_fl,no_mutation,,,,,,inconclusive,f_fl skip: no trace
+defihacklabs-firetoken-2024-10-01,f_fl+f_swap,no_mutation,,,,,,inconclusive,"f_fl skip: no trace; f_swap skip: top-level calldata 0x ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production)"
+defihacklabs-tcdp-2025-04-28,f_auth,no_mutation,,,,,,inconclusive,f_auth skip: no trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-onyxdao-2024-09-26,f_fl+f_orc+f_auth,no_mutation,,,,,,inconclusive,f_fl skip: no trace; f_orc skip: oracle=N/A why=no trace price=N/A stub=OK; f_auth skip: no trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-sizeflashloanlooping-2025-08-15,f_fl,f_fl,REVERTED,0,,,,inconclusive,send fail/timeout (cần --timeout 480+); outcome(S−f_fl)=REVERTED; viol(S)=0 → INCONCLUSIVE-revert
+defihacklabs-chisale-2024-11-07,unknown,no_mutation,,,,,,inconclusive,"gt_factors=['unknown'] — KHÔNG đoán factor, skip toàn bộ"
+defihacklabs-trustedvolumes-2026-05-07,f_auth,no_mutation,,,,,,inconclusive,f_auth skip: no trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-unverified-a152-2026-04-27,f_auth,no_mutation,,,,,,inconclusive,f_auth skip: no trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-giddyvaultv3-2026-04-23,f_auth,no_mutation,,,,,,inconclusive,f_auth skip: no trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-juiceboxrevloans-2026-04-20,f_auth,no_mutation,,,,,,inconclusive,f_auth skip: no trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-sizeflashloanlooping-2025-08-15,f_fl,no_mutation,,,,,,inconclusive,f_fl skip: no trace
+defihacklabs-paraswapdaiapproval-2025-06-25,f_auth+f_fl,no_mutation,,,,,,inconclusive,f_auth skip: no trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng); f_fl skip: no trace
+defihacklabs-rnspay-2025-03-06,f_auth,no_mutation,,,,,,inconclusive,f_auth skip: no trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-unistreetlaunchpad-2026-08-06,f_auth,no_mutation,,,,,,inconclusive,f_auth skip: no trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-muredistribution-2026-05-21,f_auth,no_mutation,,,,,,inconclusive,f_auth skip: no trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)
+defihacklabs-veth-2024-11-14,f_fl+f_swap+f_auth,no_mutation,,,,,,inconclusive,"f_fl skip: no trace; f_swap skip: top-level calldata 0x ≠ 0x641ccd83 — cap-slice không áp dụng (redirect-slice call-site-specific, TODO production); f_auth skip: no trace — Safe multisig/permission-gated KHÔNG dùng AuthRevoke (guide E4: signature recovery là kênh đúng)"
+defihacklabs-muredistribution-2026-05-21,f_auth,fidelity,REVERTED,,,,,,fidelity: send fail/timeout (cần --timeout 480+); viol(S)=0

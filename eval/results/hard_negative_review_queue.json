@@ -1,0 +1,19 @@
+{
+  "incidents": 80,
+  "structural_candidate_pool": 847,
+  "queue_rows": 160,
+  "per_incident_requested": 2,
+  "max_per_cluster": 2,
+  "unique_candidate_hashes": 160,
+  "distinct_clusters": 158,
+  "clusters_spanning_multiple_incidents": 2,
+  "candidate_signal_counts": {
+    "complexity_only": 61,
+    "swap": 41,
+    "oracle": 58
+  },
+  "paper_eligible_hard_negatives": 0,
+  "preregistered_window_blocks": 216000,
+  "within_preregistered_window": 19,
+  "warning": "Rows are an annotation queue, not verified hard negatives. Protocol match and benign intent require two-reviewer adjudication. same_transaction_family=true rows share a (from,to,selector-path) cluster with another incident's candidate(s) and should be reviewed together, not treated as independent evidence."
+}

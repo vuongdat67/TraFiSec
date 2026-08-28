@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "experiment": "E4-stage2-systematic-subset",
+  "status": "protocol-frozen-before-execution",
+  "source_queue": "eval/e4_fixed_set_v2.json",
+  "source_queue_sha256": "54adbd4f2348384cc858124882f148948c3ad704daf368a70ea63912cab0781c",
+  "selection_rule": "first N technically selectable cases in fixed-20 queue order",
+  "subset_size": 5,
+  "technical_selectability": [
+    "valid 32-byte transaction hash",
+    "positive historical block number",
+    "at least one supported mutation in frozen cache metadata",
+    "no uncertain mutation marker",
+    "non-empty trace evidence"
+  ],
+  "replacement_policy": "Before execution only: skip rows failing technical selectability and continue queue order. After runtime starts, provider/transport/EVM failure never selects a replacement; record INCONCLUSIVE.",
+  "outcome_taxonomy": [
+    "CAUSE",
+    "NO_EFFECT",
+    "REVERT",
+    "INCONCLUSIVE"
+  ],
+  "stop_conditions": [
+    "missing prepared context or proof input",
+    "baseline fidelity/proof gate failure",
+    "mutation applicability or validity cannot be established",
+    "harm oracle unavailable or valuation evidence missing",
+    "provider/process timeout; record UNOBSERVED/INCONCLUSIVE, never causal"
+  ],
+  "review_protocol": {
+    "reviewers": [
+      "reviewer_a",
+      "reviewer_b"
+    ],
+    "independent_raw_vote_files": true,
+    "adjudication_file_separate": true,
+    "votes_append_only": true,
+    "reviewers_read_same_frozen_packet": true
+  },
+  "selected_cases": [
+    {
+      "subset_index": 0,
+      "queue_index": 0,
+      "case_id": "defihacklabs-silofinance-2025-06-25",
+      "tx_hash": "0x1f15a193db3f44713d56c4be6679b194f78c2bcdd2ced5b0c7495b7406f5e87a",
+      "block": 22781962,
+      "supported_from_cache": "f_fl+f_orc"
+    },
+    {
+      "subset_index": 1,
+      "queue_index": 1,
+      "case_id": "defihacklabs-sizeflashloanlooping-2025-08-15",
+      "tx_hash": "0x63aaa5a9fc87ce419c8b1711effee34e2c726b3ee2c2d28f64b963408d6ea8d3",
+      "block": 23146023,
+      "supported_from_cache": "f_fl"
+    },
+    {
+      "subset_index": 2,
+      "queue_index": 2,
+      "case_id": "defihacklabs-yeth-2025-12-01",
+      "tx_hash": "0x53fe7ef190c34d810c50fb66f0fc65a1ceedc10309cf4b4013d64042a0331156",
+      "block": 23914086,
+      "supported_from_cache": "f_fl"
+    },
+    {
+      "subset_index": 3,
+      "queue_index": 3,
+      "case_id": "defihacklabs-thetanuts-2026-06-15",
+      "tx_hash": "0xbba9f138fe39503bfd1aa62932dbd6ab35d37d23d48e4b7bf2988a9d5dc39fec",
+      "block": 25323329,
+      "supported_from_cache": "f_fl"
+    },
+    {
+      "subset_index": 4,
+      "queue_index": 4,
+      "case_id": "defihacklabs-onyxdao-2024-09-26",
+      "tx_hash": "0x46567c731c4f4f7e27c4ce591f0aebdeb2d9ae1038237a0134de7b13e63d8729",
+      "block": 20834658,
+      "supported_from_cache": "f_orc"
+    }
+  ],
+  "technical_exclusions_before_execution": [
+    {
+      "queue_index": 16,
+      "case_id": "defihacklabs-erc20transfer-2024-10-22",
+      "reasons": [
+        "no_supported_mutation_in_cache"
+      ]
+    },
+    {
+      "queue_index": 17,
+      "case_id": "defihacklabs-strategyllamalendconvex-2025-07-16",
+      "reasons": [
+        "no_supported_mutation_in_cache"
+      ]
+    },
+    {
+      "queue_index": 18,
+      "case_id": "defihacklabs-muredistribution-2026-05-21",
+      "reasons": [
+        "no_supported_mutation_in_cache"
+      ]
+    },
+    {
+      "queue_index": 19,
+      "case_id": "defihacklabs-unistreetlaunchpad-2026-08-06",
+      "reasons": [
+        "no_supported_mutation_in_cache"
+      ]
+    }
+  ]
+}

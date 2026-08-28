@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "scope": "local Anvil only; deterministic storage-reader fixture",
+  "target": "0x00000000000000000000000000000000ca11ab1e",
+  "baseline": 1,
+  "causal_mutated": 0,
+  "sham_mutated": 1,
+  "joint_baseline": 1,
+  "joint_left_mutated": 1,
+  "joint_right_mutated": 1,
+  "joint_pair_mutated": 0,
+  "positive_control_pass": true,
+  "sham_control_pass": true,
+  "joint_control_pass": true
+}

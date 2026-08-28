@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "purpose": "Explicit source list for baseline-only E4 reviewer workspace",
+  "selection_policy": "Only cases with necessity-b2-last.json acceptance_gate=true; no heuristic reselection",
+  "cases": [
+    {
+      "case_id": "defihacklabs-silofinance-2025-06-25",
+      "tx_hash": "0x1f15a193db3f44713d56c4be6679b194f78c2bcdd2ced5b0c7495b7406f5e87a",
+      "context": "eval/results/runs/b2-context-silofinance-20260823",
+      "run_csv": "eval/results/runs/e4-defihacklabs-silofinance-2025-06-25-preregistered-orc-20260823/e4_necessity.csv"
+    },
+    {
+      "case_id": "defihacklabs-yeth-2025-12-01",
+      "tx_hash": "0x53fe7ef190c34d810c50fb66f0fc65a1ceedc10309cf4b4013d64042a0331156",
+      "context": "eval/results/runs/b2-context-yeth-2025-12-01-20260824",
+      "run_csv": "eval/results/runs/e4-defihacklabs-yeth-2025-12-01-fl-20260824/e4_necessity.csv"
+    },
+    {
+      "case_id": "defihacklabs-thetanuts-2026-06-15",
+      "tx_hash": "0xbba9f138fe39503bfd1aa62932dbd6ab35d37d23d48e4b7bf2988a9d5dc39fec",
+      "context": "eval/results/runs/b2-context-thetanuts-2026-06-15-20260824",
+      "run_csv": "eval/results/runs/e4-defihacklabs-thetanuts-2026-06-15-fl-20260824/e4_necessity.csv"
+    },
+    {
+      "case_id": "defihacklabs-onyxdao-2024-09-26",
+      "tx_hash": "0x46567c731c4f4f7e27c4ce591f0aebdeb2d9ae1038237a0134de7b13e63d8729",
+      "context": "eval/results/runs/b2-context-onyxdao-20260823",
+      "run_csv": "eval/results/runs/e4-defihacklabs-onyxdao-2024-09-26-preregistered-orc-20260823/e4_necessity.csv"
+    },
+    {
+      "case_id": "defihacklabs-veth-2024-11-14",
+      "tx_hash": "0x1ae40f26819da4f10bc7c894a2cc507cdb31c29635d31fa90c8f3f240f0327c0",
+      "context": "eval/results/runs/b2-context-veth-20260823",
+      "run_csv": "eval/results/runs/e4-defihacklabs-veth-2024-11-14-packed-amm-20260823/e4_necessity.csv"
+    },
+    {
+      "case_id": "defihacklabs-rnspay-2025-03-06",
+      "tx_hash": "0x69a825ffedeb4461afc95e21475c011b1675a95d318bb1dd63b13307dfe3b9ed",
+      "context": "eval/results/runs/b2-context-rnspay-20260823",
+      "run_csv": "eval/results/runs/e4-defihacklabs-rnspay-2025-03-06-packed-amm-20260823/e4_necessity.csv"
+    },
+    {
+      "case_id": "defihacklabs-unverified-6f7a-2025-08-22",
+      "tx_hash": "0x653b185a57fb5909180fe4eede67e51c5e9b70af16937382f86d5aefe635e5a7",
+      "context": "eval/results/runs/b2-context-unverified-6f7a-20260823",
+      "run_csv": "eval/results/runs/e4-defihacklabs-unverified-6f7a-2025-08-22-packed-amm-20260823/e4_necessity.csv"
+    },
+    {
+      "case_id": "defihacklabs-summerfi-2026-07-06",
+      "tx_hash": "0x0db528c44f23fc7fa4544684a2fab81096450a14aae8bc89f42cd0592d43da12",
+      "context": "eval/results/runs/b2-context-summerfi-20260823",
+      "run_csv": "eval/results/runs/e4-defihacklabs-summerfi-2026-07-06-preregistered-orc-20260823/e4_necessity.csv"
+    },
+    {
+      "case_id": "defihacklabs-sashatoken-2024-10-06",
+      "tx_hash": "0xd9fdc7d03eec28fc2453c5fa68eff82d4c297f436a6a5470c54ca3aecd2db17e",
+      "context": "eval/results/runs/b2-context-sashatoken-20260822",
+      "run_csv": "eval/results/runs/e4-defihacklabs-sashatoken-2024-10-06-preregistered-orc-20260823/e4_necessity.csv"
+    },
+    {
+      "case_id": "defihacklabs-sbr-token-2025-03-07",
+      "tx_hash": "0xe4c1aeacf8c93f8e39fe78420ce7a114ecf59dea90047cd2af390b30af54e7b9",
+      "context": "eval/results/runs/b2-context-sbr-token-20260823",
+      "run_csv": "eval/results/runs/e4-defihacklabs-sbr-token-2025-03-07-packed-amm-20260823/e4_necessity.csv"
+    },
+    {
+      "case_id": "defihacklabs-multitransferswap-2025-04-27",
+      "tx_hash": "0xbb82787a24d9b8d1047bbc12fe5d4b8d4ad3fc3e32e997985043ec3ef6d7dffe",
+      "context": "eval/results/runs/b2-context-multitransferswap-20260823",
+      "run_csv": null
+    }
+  ]
+}
