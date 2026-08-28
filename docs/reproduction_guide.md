@@ -31,7 +31,7 @@ Evaluates the temperature-calibrated logistic screener on the fixed 60/20 incide
 ```bash
 python -m eval.e1_cli --mode stratified
 ```
-- **Key Metrics:** AUPRC = 0.641, Accuracy = 97.13%, FPR @ 1% budget = 0.74%.
+- **Key Metrics:** AUPRC = 0.641, Recall = 0.500, Precision = 0.667, Realized FPR = 0.74% (at $\tau_{0.01} = 0.0898$).
 
 ### RQ2: Generalization under Distribution Shifts (E2)
 Evaluates chronological holdout and leave-one-family-out cross-validation:

@@ -149,7 +149,7 @@ Train and evaluate the calibrated multi-view screener:
 ```bash
 python -m eval.e1_cli --mode stratified
 ```
-- **Reference Output:** AUPRC = 0.641, Accuracy = 97.13%, Realized FPR = 0.74% at $\tau_{0.01} = 0.0898$.
+- **Reference Output:** AUPRC = 0.641, Recall = 0.500, Precision = 0.667, Realized FPR = 0.74% (at targeted 1% FPR budget $\tau_{0.01} = 0.0898$).
 
 ### E2: Structural Near-Negative Exposure (Hard MEV / Arbitrage)
 Evaluate screener degradation against complex arbitrage and liquidation traffic:
