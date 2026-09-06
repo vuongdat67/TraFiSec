@@ -281,7 +281,8 @@ def calibrate_temperature(m: LogisticFusion, X: np.ndarray, y: np.ndarray) -> Lo
 
     res = minimize_scalar(_ece_of_T, bounds=(0.1, 10.0), method="bounded")
     T = max(float(res.x), 0.1)
-    m2 = LogisticFusion(weights=m.weights, view_names=tuple(m.view_names),
+    scaled_weights = {k: float(v) / T for k, v in m.weights.items()}
+    m2 = LogisticFusion(weights=scaled_weights, view_names=tuple(m.view_names),
                         offset=m.offset / T)
     m2.train_recall_99_tau = m.train_recall_99_tau
     m2.ece = expected_calibration_error(m2.predict(X), y)
