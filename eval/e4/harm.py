@@ -220,40 +220,42 @@ def assess_attacker_value_harm(
     if not raw_deltas:
         return HarmAssessment("UNKNOWN", reason="no attacker balance or Transfer delta observed")
 
-    valued = 0.0
+    net_valued = 0.0
     unpriced_positive: list[str] = []
-    positive_by_address: dict[str, dict[str, int]] = {}
+    deltas_by_address: dict[str, dict[str, int]] = {}
     for address, deltas in raw_deltas.items():
         for asset, delta in deltas.items():
-            if delta <= 0:
+            if delta == 0:
                 continue
-            positive_by_address.setdefault(address, {})[asset] = delta
+            deltas_by_address.setdefault(address, {})[asset] = delta
             if asset == "native":
                 if native_price_usd is None:
-                    unpriced_positive.append(f"{address}:native")
+                    if delta > 0:
+                        unpriced_positive.append(f"{address}:native")
                     continue
-                valued += (delta / 10**18) * float(native_price_usd)
+                net_valued += (delta / 10**18) * float(native_price_usd)
                 continue
             metadata = _price_metadata(prices.get(asset))
             if metadata is None:
-                unpriced_positive.append(f"{address}:{asset}")
+                if delta > 0:
+                    unpriced_positive.append(f"{address}:{asset}")
                 continue
             usd_per_token, decimals = metadata
-            valued += (delta / 10**decimals) * usd_per_token
+            net_valued += (delta / 10**decimals) * usd_per_token
     if unpriced_positive:
         return HarmAssessment(
             "UNKNOWN",
             reason=f"positive candidate assets lack explicit USD prices: {unpriced_positive}",
         )
-    if not positive_by_address:
+    if net_valued <= 0.0:
         return HarmAssessment("NO_HARM", 0.0, "attacker_value_delta",
-                               f"no positive net candidate value; candidates={sorted(candidates)}")
-    status = "HARM" if valued > float(lmin_usd) else "NO_HARM"
+                               f"no positive net candidate value (net={net_valued:.2f}); candidates={sorted(candidates)}")
+    status = "HARM" if net_valued > float(lmin_usd) else "NO_HARM"
     return HarmAssessment(
         status,
-        valued,
+        net_valued,
         "attacker_value_delta",
-        f"positive_by_address={positive_by_address}; candidates={sorted(candidates)}; Lmin={float(lmin_usd)}",
+        f"net_valued={net_valued:.2f}; deltas_by_address={deltas_by_address}; candidates={sorted(candidates)}; Lmin={float(lmin_usd)}",
     )
 
 

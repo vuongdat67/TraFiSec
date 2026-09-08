@@ -96,7 +96,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="Timeout per archive JSON-RPC request in seconds")
     parser.add_argument("--rpc-attempts", type=int, default=2,
                         help="Maximum retry attempts for archive RPC requests")
-    parser.add_argument("--corpus", default=None, help="Path to incidents corpus JSONL file")
+    parser.add_argument("--corpus", "--dataset", default=None, dest="corpus",
+                        help="Path to incidents corpus JSONL file")
     parser.add_argument("--out", default=None,
                         help="CSV output path (defaults to eval/results/runs/<run-id>/e5_fidelity.csv)")
     parser.add_argument("--json-out", action="store_true",

@@ -1,5 +1,5 @@
 {
-  "offset": -8.80043217,
+  "offset": -8.800449685,
   "view_names": [
     "call_structure",
     "token_flow",
@@ -7,11 +7,11 @@
     "economic"
   ],
   "weights": {
-    "call_structure": 4.281240177,
-    "token_flow": 4.213309101,
-    "state_delta": 0.61907238,
-    "economic": 1.63362523
+    "call_structure": 5.250823127,
+    "token_flow": 5.167507533,
+    "state_delta": 0.759275219,
+    "economic": 2.003596337
   },
-  "train_recall_99_tau": 0.015007261,
-  "ece": 0.014962289
+  "train_recall_99_tau": 0.041541012,
+  "ece": 0.004551273
 }

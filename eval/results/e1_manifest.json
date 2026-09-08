@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "run_id": "e1-20260819T130739Z",
+  "run_id": "e1-20260907T083058Z",
   "experiment": "E1-screening-fixed-split",
-  "created_at_utc": "2026-08-19T13:07:39.552437+00:00",
+  "created_at_utc": "2026-09-07T08:30:58.667458+00:00",
   "git": {
-    "commit": "b4fdf0f77ecbc2da4dc251a6d85d0b0211ff223e",
+    "commit": "c5d02cac3332352f69c16a8c3a1127cfd54038fd",
     "dirty": true
   },
   "runtime": {
-    "python": "3.12.12 (main, Aug 19 2026, 19:56:28) [Clang 17.0.0 (clang-1700.0.13.5)]",
-    "platform": "macOS-15.7.3-x86_64-i386-64bit",
+    "python": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
     "tools": {
       "anvil": "anvil Version: 1.7.1",
       "cast": "cast Version: 1.7.1",
@@ -25,9 +25,8 @@
     }
   },
   "command": [
-    "eval/e1_train.py",
-    "--scale",
-    "A1"
+    "eval/e1_cli.py",
+    "--include-near-negatives"
   ],
   "parameters": {
     "seed": 42,
@@ -36,7 +35,7 @@
       0.01
     ],
     "threshold_selection": "calibration_split",
-    "scale": "A1"
+    "scale": "A2"
   },
   "inputs": {
     "trace_cache": {

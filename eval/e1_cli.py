@@ -97,29 +97,40 @@ def main(argv: list[str] | None = None) -> int:
 
     p = argparse.ArgumentParser(
         description="E1 orchestrator: crawl attack → benign → train → baselines → report")
-    p.add_argument("--scale", choices=sorted(SCALES), default="A2",
+    p.add_argument("--scale", choices=sorted(SCALES), default="A1",
                    help="scale E1 — A1 150K / A2 15K / A3 5K tx budget")
-    p.add_argument("--steps", nargs="+", default=["crawl", "benign", "train",
-                                                   "baselines"],
-                   help="cc step chy: crawl benign train baselines report "
-                        "(mc nh: crawl benign train baselines)")
+    p.add_argument("--mode", choices=["stratified", "chronological", "leave_one_family_out"],
+                   default="stratified",
+                   help="evaluation split mode: stratified (default), chronological, leave_one_family_out")
+    p.add_argument("--include-near-negatives", action="store_true",
+                   help="include structural near-negatives in the robustness evaluation")
+    p.add_argument("--steps", nargs="+", default=None,
+                   help="cac step chay: crawl benign train baselines report "
+                        "(mac dinh: train baselines report neu cache co san)")
     p.add_argument("--resume", action="store_true",
-                   help="b qua tx  cache thnh cng (crawl/benign)")
+                   help="bo qua tx da cache thanh cong (crawl/benign)")
     p.add_argument("--workers", type=int, default=4, help="thread crawl")
-    p.add_argument("--rpc", default=None, help="archive RPC (mc nh .env)")
+    p.add_argument("--rpc", default=None, help="archive RPC (mac dinh .env)")
     p.add_argument("--dry", action="store_true", help="Print execution plan without running steps")
     args = p.parse_args(argv)
 
-    steps = [s for s in args.steps if s in ALL_STEPS]
+    cache_path = _REPO_ROOT / "eval" / "results" / "e1_trace_cache.jsonl"
+    if args.steps is None:
+        if cache_path.exists():
+            steps = ["train", "baselines", "report"]
+        else:
+            steps = ["crawl", "benign", "train", "baselines", "report"]
+    else:
+        steps = [s for s in args.steps if s in ALL_STEPS]
+
     if not steps:
         print("ERROR: --steps contains no valid steps.", file=sys.stderr)
         return 1
     if any(s not in _STEPS_NO_RPC for s in steps):
-        # Execution trace analysis and verification
-        print("NOTE: step crawl/benign cn ARCHIVE_RPC trong .env (hoc --rpc).")
+        print("NOTE: step crawl/benign can ARCHIVE_RPC trong .env (hoac --rpc).")
 
-    print(f"== E1 orchestrator: scale {args.scale} ({SCALES[args.scale]:,} tx budget) "
-          f"| steps: {' → '.join(steps)} | resume={args.resume} ==")
+    print(f"== E1 orchestrator: scale {args.scale} | mode {args.mode} "
+          f"| near-negatives={args.include_near_negatives} | steps: {' → '.join(steps)} ==")
     if args.dry:
         print("DRY run - no steps executed.")
         return 0
@@ -147,6 +158,20 @@ def main(argv: list[str] | None = None) -> int:
         if rc != 0:
             print(f"ERROR: step {step} exited with code {rc} - stopping orchestrator.", file=sys.stderr)
             return rc
+
+    if args.mode != "stratified" or args.include_near_negatives:
+        print(f"\n== Robustness evaluation (mode: {args.mode}, near-negatives: {args.include_near_negatives}) ==")
+        from .e1_robustness import run as run_robustness
+        rob = run_robustness(n_seeds=1, n_boot=10)
+        for r in rob["rows"]:
+            exp = r.get("experiment", "")
+            rfpr = float(r.get("realized_fpr") or 0.0)
+            if args.mode == "chronological" and ("temporal" in exp.lower() or "chronological" in exp.lower()):
+                print(f"  [Chronological/Temporal] AUPRC={r['auc_pr']:.4f} P={r['precision']:.4f} R={r['recall']:.4f} FPR={rfpr:.4%}")
+            elif args.mode == "leave_one_family_out" and "family" in exp.lower():
+                print(f"  [Held-Family] {r.get('held_family', ''):<20}: AUPRC={r['auc_pr']:.4f}")
+            elif args.include_near_negatives and "near-negative" in exp.lower():
+                print(f"  [Near-Negative] AUPRC={r['auc_pr']:.4f} FPR={rfpr:.4%}")
 
     print("\n== E1 done. Files ==")
     for f in ("e1_trace_cache.jsonl", "e1_crawl_progress.csv",

@@ -8,7 +8,7 @@ This guide details the step-by-step procedure to reproduce the empirical evaluat
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/your-org/TraFiSec.git
+git clone https://github.com/vuongdat67/TraFiSec.git
 cd TraFiSec
 
 # 2. Virtual environment setup
@@ -41,11 +41,12 @@ python -m eval.e1_cli --mode leave_one_family_out
 ```
 
 ### RQ3: Structural Near-Negatives (E3)
-Tests screener vulnerability to complex benign arbitrage and liquidation traffic:
+Tests screener robustness against complex benign arbitrage and liquidation traffic:
 ```bash
 python -m eval.e1_cli --include-near-negatives
 ```
-- **Key Finding:** AUPRC drops to 0.557, FPR increases 22x to 16.77%.
+- **Frozen Model Stress Test:** Evaluating the frozen E1 screener on the 847 near-negatives yields FPR = **1.89%** (16/847 false alarms) and AUPRC = 0.473, demonstrating strong feature resilience.
+- **Re-calibration Diagnostic:** Recalibrating without near-negatives collapses the decision threshold to 0.0129, resulting in 142 false alarms (FPR = **16.77%**, AUPRC = 0.557).
 
 ### RQ4: View Ablation Study (E2-Ablation)
 Ablates individual behavioral views to measure feature contribution:

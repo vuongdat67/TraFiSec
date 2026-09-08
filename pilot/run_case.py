@@ -83,11 +83,15 @@ PILOT_CONFIGS = {
 
 def main():
     parser = argparse.ArgumentParser(description="Run TraFiSec pilot counterfactual replay cases.")
-    parser.add_argument("case", choices=list(PILOT_CONFIGS.keys()) + ["all"], help="Pilot case to execute")
+    parser.add_argument("case", nargs="?", default=None, choices=list(PILOT_CONFIGS.keys()) + ["all"],
+                        help="Pilot case to execute (positional)")
+    parser.add_argument("--case", dest="case_opt", choices=list(PILOT_CONFIGS.keys()) + ["all"],
+                        help="Pilot case to execute (optional flag)")
     parser.add_argument("--offline", action="store_true", help="Use local cache without querying live RPC")
     args = parser.parse_args()
 
-    cases_to_run = list(PILOT_CONFIGS.keys()) if args.case == "all" else [args.case]
+    chosen_case = args.case_opt or args.case or "all"
+    cases_to_run = list(PILOT_CONFIGS.keys()) if chosen_case == "all" else [chosen_case]
 
     for c in cases_to_run:
         print(f"\n==================================================")

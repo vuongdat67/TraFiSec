@@ -653,6 +653,31 @@ class TestStubAndLoss(unittest.TestCase):
         self.assertEqual(result.status, "HARM")
         self.assertEqual(result.loss_usd, 100_003)
 
+    def test_generic_attacker_value_oracle_offsets_outgoing_assets(self):
+        attacker = "0x" + "aa" * 20
+        token_in = "0x" + "bb" * 20
+        token_out = "0x" + "cc" * 20
+        transfer = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+        topic = lambda address: "0x" + "0" * 24 + address[2:]
+        # Attacker spends $200k of token_out to receive $200k of token_in (equal-value swap)
+        target = {
+            "logs": [
+                {"address": token_out, "topics": [transfer, topic(attacker), topic("0x" + "11" * 20)],
+                 "data": hex(200_000 * 10**18)},
+                {"address": token_in, "topics": [transfer, topic("0x" + "11" * 20), topic(attacker)],
+                 "data": hex(200_000 * 10**18)},
+            ],
+        }
+        result = assess_attacker_value_harm(
+            target, attacker,
+            token_prices={
+                token_in: {"usd_per_token": 1, "decimals": 18},
+                token_out: {"usd_per_token": 1, "decimals": 18},
+            },
+        )
+        self.assertEqual(result.status, "NO_HARM")
+        self.assertAlmostEqual(result.loss_usd, 0.0)
+
     def test_generic_attacker_value_oracle_fails_closed_on_missing_price(self):
         attacker = "0x" + "aa" * 20
         result = assess_attacker_value_harm(

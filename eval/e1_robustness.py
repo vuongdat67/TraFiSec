@@ -190,10 +190,25 @@ def near_negative_holdout(ds: dict, budgets: tuple[float, ...], seed: int = SEED
     h2y = _labels(ds)
     y = np.array([h2y[h] for h in test_h])
     scores = model.predict(_view_matrix(ds, test_h))
-    return _metric_rows("E3-near-negative", "structural-holdout", y, scores, budgets, thresholds,
-                        n_fit=nfit, n_calibration=ncal, cutoff_block="",
-                        held_family="", negative_set="mined-structural-near-negative",
-                        selection="known selectors OR >=10 calls OR >=5 logs")
+    recalibrated_rows = _metric_rows("E3-near-negative", "structural-holdout", y, scores, budgets, thresholds,
+                                     n_fit=nfit, n_calibration=ncal, cutoff_block="",
+                                     held_family="", negative_set="mined-structural-near-negative",
+                                     selection="known selectors OR >=10 calls OR >=5 logs")
+
+    # Evaluates the frozen standard E1 model directly on near-negative cohort (avoids re-calibration confound)
+    split = train_test_split(ds, seed=seed)
+    model_e1, nfit_e1, ncal_e1, thresholds_e1 = _fit(ds, split["train"]["hashes"], seed, budgets)
+    test_attacks_e1 = [h for h in split["test"]["hashes"]
+                       if any(r["tx_hash"] == h and r["label"] == "attack" for r in ds["rows"])]
+    test_frozen_h = test_attacks_e1 + near
+    y_frozen = np.array([h2y[h] for h in test_frozen_h])
+    scores_frozen = model_e1.predict(_view_matrix(ds, test_frozen_h))
+    frozen_rows = _metric_rows("E3-near-negative-frozen", "frozen-model-near-negatives",
+                               y_frozen, scores_frozen, budgets, thresholds_e1,
+                               n_fit=nfit_e1, n_calibration=ncal_e1, cutoff_block="",
+                               held_family="", negative_set="mined-structural-near-negative-frozen",
+                               selection="frozen standard E1 detector on near-negatives")
+    return recalibrated_rows + frozen_rows
 
 
 def token_flow_covered_split(ds: dict, budgets: tuple[float, ...],

@@ -52,10 +52,10 @@ TraFiSec resolves this ambiguity via a sequential two-stage architecture:
 
 ## Benchmark Corpus
 
-The evaluation benchmark contains **4,308 Ethereum transaction traces** across three strata:
+The evaluation benchmark contains **3,461 unique Ethereum transaction traces**:
 - **Verified Exploits ($n = 80$):** High-impact DeFi exploits (2024--2026) spanning eight attack families (governance bypass, accounting errors, oracle manipulation, token logic, flash loans, precision loss, rug pulls, and bridge exploits).
-- **Background Negatives ($n = 3,381$):** Temporally co-located transactions sampled from the same incident blocks.
-- **Structural Near-Negatives ($n = 847$):** Hard benign transactions (MEV arbitrageurs and liquidation bots) mined via selector complexity rules.
+- **Background Negatives ($n = 3,381$):** Non-exploit transactions sampled from 37 bimonthly anchor blocks across Ethereum mainnet (2021--2026).
+- **Structural Near-Negatives ($n = 847$):** Complex benign transactions (MEV arbitrageurs, liquidation bots) mined as a structural subset from the background pool via selector complexity rules.
 
 ---
 
@@ -90,14 +90,16 @@ TraFiSec/
 ├── corpus/               # Audited incident benchmark dataset
 │   ├── dataset.py        # Dataset loader and integrity verifier
 │   ├── incidents.jsonl   # 80 verified Ethereum exploit incidents
-│   ├── background.jsonl  # 3,381 background negative transactions
-│   └── hard_negatives.jsonl # 847 structural near-negative transactions
+│   ├── SCHEMA.md         # Data schema and annotation specification
+│   └── verified_attacks.tsv # Tabular index of verified incidents
+├── eval/artifacts/       # Versioned evaluation cache archives
+│   └── e1_trace_cache.jsonl.gz # Compressed execution trace cache (3,461 traces)
 ├── pilot/                # Detailed case study runners and doc specifications
 │   ├── run_case.py       # Unified cross-platform case study CLI
 │   └── docs/             # Technical incident breakdowns
 ├── tools/                # Diagnostic scripts and Geth-EVM replayer
 │   └── geth-replay/      # Go-Ethereum replayer with state proof verification
-├── tests/                # 6 consolidated pytest test suites (196 tests)
+├── tests/                # 6 consolidated pytest test suites (197 tests)
 ├── paper/                # IEEE RIVF 2026 manuscript source and build script
 ├── report/               # Undergraduate graduation thesis report (UIT format)
 └── docs/                 # Formal architecture and reproduction specifications
@@ -151,12 +153,13 @@ python -m eval.e1_cli --mode stratified
 ```
 - **Reference Output:** AUPRC = 0.641, Recall = 0.500, Precision = 0.667, Realized FPR = 0.74% (at targeted 1% FPR budget $\tau_{0.01} = 0.0898$).
 
-### E2: Structural Near-Negative Exposure (Hard MEV / Arbitrage)
-Evaluate screener degradation against complex arbitrage and liquidation traffic:
+### E3: Structural Near-Negative Exposure (Hard MEV / Arbitrage)
+Evaluate screener robustness against complex arbitrage and liquidation traffic:
 ```bash
 python -m eval.e1_cli --include-near-negatives
 ```
-- **Reference Output:** AUPRC drops to 0.557, Realized FPR inflates 22x to 16.77%.
+- **Frozen Model Evaluation:** Evaluated on the frozen E1 model and operating threshold ($\tau_{0.01} = 0.0898$), empirical FPR is **1.89%** (16/847 false alarms) with AUPRC = 0.473, demonstrating strong feature representation resilience.
+- **Re-calibration Diagnostic:** Recalibrating without near-negatives causes threshold collapse to 0.0129, triggering 142 false alarms (FPR inflates to **16.77%**, AUPRC = 0.557).
 
 ### E4 & E5: Replay Fidelity and Causal Verification
 Run the deterministic replay and state fidelity verification suite:
